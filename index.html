@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
+    <title>Gerenciador de Projetos</title>
+</head>
+<body>
+    <h1>Gerenciador de Projetos</h1>
+    <div id="container">
+        <!-- Formulário para criar um novo projeto -->
+        <form id="form-projeto">
+            <input type="text" id="nome-projeto" placeholder="Nome do projeto" required>
+            <input type="text" id="descricao-projeto" placeholder="Descrição do projeto" required>
+            <button type="submit" id="botao-projeto">Criar Projeto</button>
+        </form>
+        <!-- Lista de projetos criados -->
+        <div id="lista-projetos"></div>
+        <!-- Modal para mostrar as tarefas de um projeto -->
+        <div id="modal">
+            <div id="modal-content">
+                <h2 id="titulo-projeto"></h2>
+                <p id="texto-projeto"></p>
+                <button id="botao-editar-projeto">Editar Projeto</button>
+                <button id="botao-excluir-projeto">Excluir Projeto</button>
+                <!-- Formulário para adicionar uma nova tarefa ao projeto -->
+                <form id="form-tarefa">
+                    <input type="text" id="titulo-tarefa" placeholder="Título da tarefa" required>
+                    <select id="prioridade-tarefa" required>
+                        <option value="" disabled selected>Prioridade da tarefa</option>
+                        <option value="baixa">Baixa</option>
+                        <option value="media">Média</option>
+                        <option value="alta">Alta</option>
+                    </select>
+                    <select id="status-tarefa" required>
+                        <option value="" disabled selected>Status da tarefa</option>
+                        <option value="pendente">Pendente</option>
+                        <option value="concluida">Concluída</option>
+                    </select>
+                    <button type="submit" id="botao-tarefa">Adicionar Tarefa</button>
+                </form>
+                <!-- Filtro para mostrar as tarefas por prioridade ou status -->
+                <div id="filtro">
+                    <select id="filtro-tarefa">
+                        <option value="" disabled selected>Filtrar tarefas por</option>
+                        <option value="prioridade">Prioridade</option>
+                        <option value="status">Status</option>
+                    </select>
+                    <button id="botao-filtro">Filtrar</button>
+                </div>
+                <!-- Lista de tarefas do projeto -->
+                <div id="lista-tarefas"></div>
+            </div>
+        </div>
+    </div>
+    <script src="main.js"></script>
+</body>
+</html>

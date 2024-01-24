@@ -1,0 +1,295 @@
+body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #000351;
+        }
+
+        h1 {
+            text-align: center;
+            background-color: #140eb0;
+            color: rgb(6, 3, 67);
+            padding: 20px;
+        }
+
+        #container {
+            width: 80%;
+            margin: 0 auto;
+        }
+
+        #form-projeto {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin: 20px 0;
+        }
+
+        #form-projeto input, #form-projeto button {
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        #form-projeto input {
+            width: 40%;
+        }
+
+        #form-projeto button {
+            width: 15%;
+            background-color: #00007e;
+            color: white;
+            cursor: pointer;
+        }
+
+        #lista-projetos {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-gap: 20px;
+        }
+
+        .projeto {
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            padding: 10px;
+        }
+
+        .projeto h2 {
+            margin: 0;
+        }
+
+        .projeto p {
+            margin: 10px 0;
+        }
+
+        .projeto button {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            background-color: #333;
+            color: white;
+            cursor: pointer;
+        }
+
+        .projeto button:hover {
+            background-color: #555;
+        }
+
+        #modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+
+        #modal-content {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 80%;
+            max-width: 600px;
+            background-color: white;
+            border-radius: 5px;
+            padding: 20px;
+            overflow-y: auto;
+        }
+
+        #modal-content h2 {
+            margin: 0;
+        }
+
+        #modal-content p {
+            margin: 10px 0;
+        }
+
+        #modal-content button {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            background-color: #333;
+            color: white;
+            cursor: pointer;
+        }
+
+        #modal-content button:hover {
+            background-color: #555;
+        }
+
+        #form-tarefa {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin: 20px 0;
+        }
+
+        #form-tarefa input, #form-tarefa select, #form-tarefa button {
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        #form-tarefa input {
+            width: 40%;
+        }
+
+        #form-tarefa select {
+            width: 15%;
+        }
+
+        #form-tarefa button {
+            width: 15%;
+            background-color: #333;
+            color: white;
+            cursor: pointer;
+        }
+
+        #lista-tarefas {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-gap: 20px;
+        }
+
+        .tarefa {
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            padding: 10px;
+        }
+
+        .tarefa h3 {
+            margin: 0;
+        }
+
+        .tarefa p {
+            margin: 10px 0;
+        }
+
+        .tarefa span {
+            display: inline-block;
+            padding: 5px;
+            border-radius: 5px;
+            color: white;
+        }
+
+        .tarefa .baixa {
+            background-color: green;
+        }
+
+        .tarefa .media {
+            background-color: orange;
+        }
+
+        .tarefa .alta {
+            background-color: red;
+        }
+
+        .tarefa .pendente {
+            background-color: blue;
+        }
+
+        .tarefa .concluida {
+            background-color: gray;
+        }
+
+        .tarefa button {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            background-color: #333;
+            color: white;
+            cursor: pointer;
+        }
+
+        .tarefa button:hover {
+            background-color: #555;
+        }
+
+        #filtro {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin: 20px 0;
+        }
+
+        #filtro select, #filtro button {
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        #filtro select {
+            width: 40%;
+        }
+
+        #filtro button {
+            width: 15%;
+            background-color: #333;
+            color: white;
+            cursor: pointer;
+        }
+        
+        /* Estilo CSS para tornar o layout responsivo */
+
+/* Usando media queries para definir diferentes estilos de acordo com a largura da tela */
+
+/* Para telas com largura menor ou igual a 600px */
+@media only screen and (max-width: 600px) {
+    /* Reduzindo a largura do container para 90% */
+    #container {
+        width: 90%;
+    }
+
+    /* Reduzindo o número de colunas da lista de projetos para 1 */
+    #lista-projetos {
+        grid-template-columns: 1fr;
+    }
+
+    /* Reduzindo o número de colunas da lista de tarefas para 1 */
+    #lista-tarefas {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Para telas com largura maior que 600px e menor ou igual a 900px */
+@media only screen and (min-width: 600px) and (max-width: 900px) {
+    /* Mantendo a largura do container em 80% */
+    #container {
+        width: 80%;
+    }
+
+    /* Reduzindo o número de colunas da lista de projetos para 2 */
+    #lista-projetos {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    /* Reduzindo o número de colunas da lista de tarefas para 2 */
+    #lista-tarefas {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Para telas com largura maior que 900px */
+@media only screen and (min-width: 900px) {
+    /* Mantendo a largura do container em 80% */
+    #container {
+        width: 80%;
+    }
+
+    /* Mantendo o número de colunas da lista de projetos em 3 */
+    #lista-projetos {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    /* Mantendo o número de colunas da lista de tarefas em 3 */
+    #lista-tarefas {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
