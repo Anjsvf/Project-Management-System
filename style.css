@@ -258,38 +258,36 @@ body {
     }
 }
 
-/* Para telas com largura maior que 600px e menor ou igual a 900px */
-@media only screen and (min-width: 600px) and (max-width: 900px) {
-    /* Mantendo a largura do container em 80% */
+
+@media only screen and (max-width: 600px) {
+    #container {
+        width: 90%;
+    }
+
+    #project-list,
+    #task-list {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media only screen and (min-width: 601px) and (max-width: 900px) {
     #container {
         width: 80%;
     }
 
-    /* Reduzindo o número de colunas da lista de projetos para 2 */
-    #lista-projetos {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
-    /* Reduzindo o número de colunas da lista de tarefas para 2 */
-    #lista-tarefas {
+    #project-list,
+    #task-list {
         grid-template-columns: repeat(2, 1fr);
     }
 }
 
-/* Para telas com largura maior que 900px */
-@media only screen and (min-width: 900px) {
-    /* Mantendo a largura do container em 80% */
+@media only screen and (min-width: 901px) {
     #container {
         width: 80%;
     }
 
-    /* Mantendo o número de colunas da lista de projetos em 3 */
-    #lista-projetos {
-        grid-template-columns: repeat(3, 1fr);
-    }
-
-    /* Mantendo o número de colunas da lista de tarefas em 3 */
-    #lista-tarefas {
+    #project-list,
+    #task-list {
         grid-template-columns: repeat(3, 1fr);
     }
 }
